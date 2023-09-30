@@ -15,7 +15,7 @@ for i in range (train_set_count):
     a = randint(0, train_set_limit)
     b = randint(0, train_set_limit)
     c = randint(0, train_set_limit)
-    op = a + (2*b) + (3*c)
+    op = (2*a) + (3*b) + c
     train_input.append([a, b, c])
     train_output.append(op)
 
@@ -27,7 +27,7 @@ predictor = LinearRegression()
 predictor.fit(X=train_input, y=train_output)
 
 # Прогнозирование
-x_test =[[5, 8, 10]]
+x_test =[[10, 20, 30]]
 outcome = predictor.predict(X=x_test)
 coefficients = predictor.coef_
 
